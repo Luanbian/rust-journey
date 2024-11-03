@@ -1,3 +1,5 @@
+mod features;
+
 fn main() {
-    println!("Hello, world!");
+    features::guessing_game::main();
 }
