@@ -3,14 +3,23 @@ use rand::Rng;
 use std::cmp::Ordering;
 
 pub fn main() {
+    println!("Guess the number!");
     let secret_number = generate_secret_number();
-    let user_guess = get_user_guess();
-    let result = compare_guess_to_secret_number(user_guess, secret_number);
-    println!("{}", result);
+
+    loop {
+        let user_guess = get_user_guess();
+        let result = compare_guess_to_secret_number(user_guess, secret_number);
+
+        if result == "You win!" {
+            println!("Congratulations! You guessed the secret number!");
+            break;
+        } else {
+            println!("{} Try again!", result);
+        }
+    }
 }
 
 fn get_user_guess() -> u32 {
-    println!("Guess the number!");
     println!("Please, input your guess");
 
     let mut guess = String::new();
@@ -18,8 +27,6 @@ fn get_user_guess() -> u32 {
     io::stdin()
         .read_line(&mut guess)
         .expect("Failed to read line");
-
-    println!("You guessed: {}", guess);
 
     let guess: u32 = match guess.trim().parse() {
         Ok(num) => num,
@@ -34,7 +41,6 @@ fn get_user_guess() -> u32 {
 
 fn generate_secret_number() -> u32 {
     let secret_number = rand::thread_rng().gen_range(1..=100);
-    println!("The secret number is: {}", secret_number);
     return secret_number;
 }
 
