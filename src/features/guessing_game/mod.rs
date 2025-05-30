@@ -36,12 +36,11 @@ fn get_user_guess() -> u32 {
         }
     };
 
-    return guess;
+    guess
 }
 
 fn generate_secret_number() -> u32 {
-    let secret_number = rand::thread_rng().gen_range(1..=100);
-    return secret_number;
+    rand::thread_rng().gen_range(1..=100)
 }
 
 fn compare_guess_to_secret_number(guess: u32, secret_number: u32) -> String {

@@ -50,7 +50,7 @@ pub fn teste_sistema_pontuacao() {
     let mut handles = vec![];
 
     // Threads atualizando pontuações
-    let jogadores = vec!["Alice", "Bob", "Charlie", "Diana"];
+    let jogadores = ["Alice", "Bob", "Charlie", "Diana"];
     for (i, jogador) in jogadores.iter().enumerate() {
         let sistema_clone = Arc::clone(&sistema);
         let jogador = jogador.to_string();

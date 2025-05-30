@@ -23,7 +23,7 @@ impl ContaBancaria {
             return false;
         }
         *saldo -= valor;
-        return true;
+        true
     }
 
     fn consultar_saldo(&self) -> f64 {
