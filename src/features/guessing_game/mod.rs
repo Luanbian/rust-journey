@@ -1,6 +1,6 @@
-use std::io::{self};
 use rand::Rng;
 use std::cmp::Ordering;
+use std::io::{self};
 
 pub fn main() {
     println!("Guess the number!");
@@ -46,7 +46,7 @@ fn generate_secret_number() -> u32 {
 
 fn compare_guess_to_secret_number(guess: u32, secret_number: u32) -> String {
     match guess.cmp(&secret_number) {
-        Ordering::Less =>  "Too small!".to_string(),
+        Ordering::Less => "Too small!".to_string(),
         Ordering::Greater => "Too big!".to_string(),
         Ordering::Equal => "You win!".to_string(),
     }
