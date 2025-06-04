@@ -1,6 +1,8 @@
 mod features;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     features::guessing_game::main();
     features::syncronizing::main();
+    features::dependency_injection::main().await;
 }
