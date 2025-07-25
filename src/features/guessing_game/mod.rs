@@ -7,6 +7,7 @@ pub fn main() {
     let secret_number = generate_secret_number();
 
     loop {
+        println!("The secret number is between 1 and 100: {}", secret_number);
         let user_guess = get_user_guess();
         let result = compare_guess_to_secret_number(user_guess, secret_number);
 
